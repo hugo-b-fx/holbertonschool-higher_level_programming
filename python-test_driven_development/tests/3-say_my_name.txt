@@ -1,22 +1,77 @@
->>> smn = __import__('3-say_my_name').say_my_name
+Testing the `say_my_name` function in Python
+============================================
 
->>> smn("John", "Smith")
-My name is John Smith
+This is a doctest file for testing the `say_my_name` function in Python.
+It provides examples of how to use the function.
 
->>> smn("Billy")
-My name is Billy 
+Import file:
+------------
 
->>> smn(12, "douze")
-Traceback (most recent call last):
+.. code-block:: python
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+First and Last name are valid string:
+-------------------------------------
+
+.. code-block:: python
+
+    >>> say_my_name("blbl", "blbll")
+    My name is blbl blbll
+
+No arguments given:
+-------------------
+
+.. code-block:: python
+
+    >>> say_my_name()
+    Traceback (most recent call last):
     ...
-TypeError: first_name must be a string
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
->>> smn("onze", 11)
-Traceback (most recent call last):
-    ...
-TypeError: last_name must be a string
+First name is empty:
+----------------------
 
->>> smn()
-Traceback (most recent call last):
+.. code-block:: python
+
+    >>> say_my_name("", "dddd")
+    My name is  dddd
+
+Last name is empty:
+----------------------
+
+.. code-block:: python
+
+    >>> say_my_name("Hugo", "")
+    My name is Hugo 
+
+First and last name are empty string:
+-------------------------------------
+
+.. code-block:: python
+
+    >>> say_my_name("", "")
+    My name is  
+
+Last name is missing:
+--------------------
+
+.. code-block:: python
+
+    >>> say_my_name("ddd")
+    My name is ddd 
+
+First or last name are not a string:
+------------------------------------
+
+.. code-block:: python
+
+    >>> say_my_name(42, "ss")
+    Traceback (most recent call last):
     ...
-TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+    TypeError: first_name must be a string
+
+    >>> say_my_name("ss", 42)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
