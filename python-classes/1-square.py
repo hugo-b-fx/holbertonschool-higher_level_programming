@@ -3,6 +3,7 @@
 script defining a square
 """
 
+
 class Square:
     """
     ddd
