@@ -6,5 +6,4 @@ script defining a square
 
 
 class Square:
-    ""
-    ""
+    pass
