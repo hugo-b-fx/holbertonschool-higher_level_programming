@@ -1,0 +1,69 @@
+>>> BG = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BG()
+>>> isinstance(bg, BG)
+True
+
+>>> hasattr(BG, 'integer_validator')
+True
+
+>>> hasattr(BG, 'area')
+True
+
+>>> BG.integer_validator(BG, "mes", 7)
+
+>>> bg.integer_validator("length", 23)
+>>> bg.integer_validator("width", 2)
+>>> bg.integer_validator("ItsBig", 2930437492648263)
+
+>>> bg.integer_validator("mes", 0)
+Traceback (most recent call last):
+ValueError: mes must be greater than 0
+
+>>> bg.integer_validator("negatif", -24)
+Traceback (most recent call last):
+ValueError: negatif must be greater than 0
+
+>>> bg.integer_validator(1, "salut")
+Traceback (most recent call last):
+TypeError: 1 must be an integer
+
+>>> bg.integer_validator("infini", float('inf'))
+Traceback (most recent call last):
+TypeError: infini must be an integer
+
+>>> bg.integer_validator("N", float('nan'))
+Traceback (most recent call last):
+TypeError: N must be an integer
+
+>>> bg.integer_validator("article", 49.3)
+Traceback (most recent call last):
+TypeError: article must be an integer
+
+>>> bg.integer_validator("testy", [36, 30])
+Traceback (most recent call last):
+TypeError: testy must be an integer
+
+>>> bg.integer_validator("typle", (1,))
+Traceback (most recent call last):
+TypeError: typle must be an integer
+
+>>> bg.integer_validator("testout", None)
+Traceback (most recent call last):
+TypeError: testout must be an integer
+
+>>> bg.integer_validator("E", {1, 5, 9})
+Traceback (most recent call last):
+TypeError: E must be an integer
+
+>>> bg.integer_validator("bool", False)
+Traceback (most recent call last):
+TypeError: bool must be an integer
+
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> bg.integer_validator("mes")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
