@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-class student
+class Student
 """
 
 
@@ -17,3 +17,7 @@ class Student:
         if attrs is None:
             return self.__dict__
         return {x: y for x, y in self.__dict__.items() if x in attrs}
+
+    def reload_from_json(self, json):
+        for key, values in json.items():
+            setattr(self, key, values)

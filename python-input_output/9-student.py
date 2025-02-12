@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-class student
+creates a student class
 """
 
 
@@ -13,7 +13,5 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self, attrs=None):
-        if attrs is None:
-            return self.__dict__
-        return {x: y for x, y in self.__dict__.items() if x in attrs}
+    def to_json(self):
+        return self.__dict__
